@@ -12,7 +12,6 @@ class PlaylistsService {
             SELECT
                 p.id,
                 p.name,
-                u.username,
                 s.id as song_id,
                 s.title,
                 s.performer
@@ -22,11 +21,11 @@ class PlaylistsService {
                 users u
             ON
                 p.owner = u.id
-            INNER JOIN
+            LEFT JOIN
                 playlist_songs ps
             ON
                 p.id = ps.playlist_id
-            INNER JOIN
+            LEFT JOIN
                 songs s
             ON
                 ps.song_id = s.id
