@@ -2,7 +2,6 @@ const mapDBPlaylistSongsToModel = (playlists) => {
   const mapPlaylistSongs = {
     id: playlists[0].id,
     name: playlists[0].name,
-    username: playlists[0].username,
     songs: [],
   };
 
